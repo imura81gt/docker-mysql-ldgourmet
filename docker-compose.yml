@@ -8,8 +8,8 @@ services:
       - MYSQL_DATABASE=ldgourmet
       - MYSQL_USER=ldgourmet
       - MYSQL_PASSWORD=ldg0urme+
-    ports:
-      - "3306:3306"
+    #ports:
+    #  - "3306:3306"
     volumes:
       - ./data/ldgourmet:/data/ldgourmet
       - ./mysql/sql/:/docker-entrypoint-initdb.d/
