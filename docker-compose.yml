@@ -1,0 +1,16 @@
+version: '2'
+services:
+  mysql:
+    image: mysql:8.0
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_DATABASE=ldgourmet
+      - MYSQL_USER=ldgourmet
+      - MYSQL_PASSWORD=ldg0urme+
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./data/ldgourmet:/data/ldgourmet
+      - ./mysql/sql/:/docker-entrypoint-initdb.d/
+      - ./mysql/conf.d:/etc/mysql/conf.d
